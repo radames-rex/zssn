@@ -1,0 +1,5 @@
+/front-end/node_modules
+/front-end/dist
+/front-end/.tmp
+/front-end/.sass-cache
+/front-end/bower_components

@@ -1,0 +1,182 @@
+<section class="dashboard">
+  <div class="dashboard__title">
+    <div class="dashboard__title-element" style="width: 190px;">{{ 'dashboard.type' | translate }}</div>
+    <div class="dashboard__title-element" style="width: 45px;">{{ 'dashboard.owner' | translate }}</div>
+    <div class="dashboard__title-element" style="width: 150px;">{{ 'dashboard.time' | translate }}</div>
+    <div class="dashboard__title-element" style="width: 75px;">{{ 'dashboard.state' | translate }}</div>
+    <div class="dashboard__title-element" style="width: 45px;">{{ 'dashboard.metrics' | translate }}</div>
+    <div class="dashboard__title-element" style="width: 45px;">{{ 'dashboard.build' | translate }}</div>
+    <div class="dashboard__title-element" style="width: 45px;">{{ 'dashboard.unit' | translate }}</div>
+    <div class="dashboard__title-element" style="width: 45px;">{{ 'dashboard.function' | translate }}</div>
+  </div>
+  <div class="dashboard__items {{ data.class }}" ng-repeat="data in datalist">
+    <div class="dashboard__item">
+      <div class="dashboard__item-element" style="width: 35px;">
+        <img src="images/icons/{{ data.imgtype }}" alt="{{ data.type }}" />
+      </div>
+      <div class="dashboard__item-element content--text" style="width: 140px;"><span><a href="#" ng-click="openFull(data)">{{ data.name }}</a></span></div>
+      <div class="dashboard__item-element content--text" style="width: 45px;"><span>{{ data.owner }}</span></div>
+      <div class="dashboard__item-element content--text" style="width: 150px;"><span>{{ data.time }}</span></div>
+      <div class="dashboard__item-element content--text" style="width: 85px;"><span>{{ data.state }}</span></div>
+      <div class="dashboard__item-element content--coverage" style="width: 45px;">
+        <div style="width:{{data.metrics}}%;background-color: {{data.colormetrics}}"></div>
+      </div>
+      <div class="dashboard__item-element content--coverage" style="width: 45px;">
+        <div style="width:{{data.build}}%;background-color: {{data.colorbuild}}"></div>
+      </div>
+      <div class="dashboard__item-element content--coverage" style="width: 45px;">
+        <div style="width:{{data.unit}}%;background-color: {{data.colorunit}}"></div>
+      </div>
+      <div class="dashboard__item-element content--coverage" style="width: 45px;">
+        <div style="width:{{data.functional}}%;background-color: {{data.colorfunc}}"></div>
+      </div>
+    </div>
+
+    <div class="dashboard__details" ng-show="data.full">
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch ng-click="openCard(data)" class="card">
+        <md-card-title>
+          <md-card-title-text>
+            <div class="card__title">Metrics</div>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-title class="card--correction">
+          <md-card-title-media>
+            <div class="md-media-x1 card-media card__metrics">
+              <div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                  Test
+                </div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                  Maintanability
+                </div>
+              </div>
+              <div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                  Security
+                </div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                  Workmanship
+                </div>
+              </div>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+      </md-card>
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch ng-click="openCard(data)" class="card">
+        <md-card-title>
+          <md-card-title-text>
+            <div class="card__title">Build</div>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-title class="card--correction">
+          <md-card-title-media>
+            <div class="md-media-x1 card-media card__metrics">
+              <div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+              </div>
+              <div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+              </div>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+      </md-card>
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch ng-click="openCard(data)" class="card">
+        <md-card-title>
+          <md-card-title-text>
+            <div class="card__title">Unit Test</div>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-title class="card--correction">
+          <md-card-title-media>
+            <div class="md-media-x1 card-media card__metrics">
+              <div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+              </div>
+              <div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+              </div>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+      </md-card>
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch ng-click="openCard(data)" class="card">
+        <md-card-title>
+          <md-card-title-text>
+            <div class="card__title">Functional Test</div>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-title class="card--correction">
+          <md-card-title-media>
+            <div class="md-media-x1 card-media card__metrics">
+              <div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+              </div>
+              <div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+                <div class="card__metrics--element">
+                  <span>50</span>
+                  <img src="images/icons/arrow-green.png" alt="Metric" />
+                </div>
+              </div>
+            </div>
+          </md-card-title-media>
+        </md-card-title>
+      </md-card>
+
+      <div class="">
+        Result:
+      </div>
+    </div>
+
+  </div>
+</section>
