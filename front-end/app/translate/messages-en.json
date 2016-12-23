@@ -1,0 +1,20 @@
+{
+	"general" : {
+		"welcome" : "Dashboard",
+		"back" : "Back",
+		"others" : "Others",
+		"error" : {
+			"request" : "Try Again!"
+		}
+	},
+	"dashboard" : {
+		"type": "Changelist/Build",
+		"owner" : "Owner",
+		"time": "Time Started",
+		"state": "State",
+		"metrics": "Metrics",
+		"build": "Build",
+		"unit": "Unit Test",
+		"function": "Functional Test"
+	}
+}
