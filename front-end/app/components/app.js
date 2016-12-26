@@ -54,19 +54,19 @@ angular
       url: PATH.dashboard,
       templateUrl: 'views/dashboard.html',
       controller: 'DashboardCtrl as ctrl'
-    }).state('main.survivor', {
+    }).state('main.dashboard.survivor', {
       url: PATH.survivor,
       templateUrl: 'views/survivor.html',
       controller: 'SurvivorCtrl as ctrl'
-    }).state('main.exchange', {
+    }).state('main.dashboard.exchange', {
       url: PATH.exchange,
       templateUrl: 'views/exchange.html',
       controller: 'ExchangeCtrl as ctrl'
-    }).state('main.quarantine', {
+    }).state('main.dashboard.quarantine', {
       url: PATH.quarantine,
       templateUrl: 'views/quarantine.html',
       controller: 'QuarantineCtrl as ctrl'
-    }).state('main.report', {
+    }).state('main.dashboard.report', {
       url: PATH.report,
       templateUrl: 'views/report.html',
       controller: 'ReportCtrl as ctrl'
