@@ -31,9 +31,8 @@ angular
   })
   .constant('REQUEST', {
     api: {
-      url: 'http://localhost:8007/v1',
-      users: '/users/',
-      repos: '/repos'
+      url: 'http://zssn-backend-example.herokuapp.com/api',
+      reports: '/report.json',
     }
   })
   .config(function($stateProvider, $urlRouterProvider, $translateProvider, PATH) {

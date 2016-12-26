@@ -9,23 +9,17 @@
    * # ReportCtrl
    * Controller of the zssnApp
    */
-  var ReportCtrl = function($scope) {
+  var ReportCtrl = function($scope, ReportFactory) {
 
-    $scope.report = [{
-      face: "images/icons/wall-blue.png",
-      indicator : "Z",
-      value: "10",
-      description: "%"
-    },{
-      face: "images/icons/wall-red.png",
-      indicator : "M",
-      value: "10",
-      description: "$"
-    }];
+    $scope.reports = [];
+
+    ReportFactory.getReport().then(function(data){
+      $scope.reports = data;
+    });
 
   };
 
-  ReportCtrl.$inject = ['$scope'];
+  ReportCtrl.$inject = ['$scope', 'ReportFactory'];
 
   angular
     .module('zssnApp')

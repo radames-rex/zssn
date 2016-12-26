@@ -16,7 +16,7 @@
   "survivor" : {
     "name" : "Nome",
     "age" : "Idade",
-    "genre" : "Sexo",
+    "gender" : "Sexo",
     "male" : "Masculino",
     "female" : "Feminino",
     "inventory" : "Invetário",
