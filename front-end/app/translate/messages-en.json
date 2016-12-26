@@ -19,6 +19,11 @@
     "genre" : "Genre",
     "male" : "Male",
     "female" : "Female",
+    "inventory" : "Inventory",
     "coordinates" : "Coordinates"
+  },
+  "report" : {
+    "name" : "Report",
+    "theme" : "Report for "
   }
 }
