@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name challengeApp
+ * @name zssnApp
  * @description
- * # challengeApp
+ * # zssnApp
  *
  * Main module of the application.
  */
 angular
-  .module('challengeApp', [
+  .module('zssnApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -23,11 +23,15 @@ angular
   ])
   .constant('PATH', {
     main: '/main',
-    dashboard: '/dashboard'
+    dashboard: '/dashboard',
+    survivor: '/survivor',
+    exchange: '/exchange',
+    quarantine: '/quarantine',
+    report: '/report'
   })
   .constant('REQUEST', {
-    github: {
-      url: 'https://api.github.com',
+    api: {
+      url: 'http://localhost:8007/v1',
       users: '/users/',
       repos: '/repos'
     }
@@ -50,6 +54,22 @@ angular
       url: PATH.dashboard,
       templateUrl: 'views/dashboard.html',
       controller: 'DashboardCtrl as ctrl'
+    }).state('main.survivor', {
+      url: PATH.survivor,
+      templateUrl: 'views/survivor.html',
+      controller: 'SurvivorCtrl as ctrl'
+    }).state('main.exchange', {
+      url: PATH.exchange,
+      templateUrl: 'views/exchange.html',
+      controller: 'ExchangeCtrl as ctrl'
+    }).state('main.quarantine', {
+      url: PATH.quarantine,
+      templateUrl: 'views/quarantine.html',
+      controller: 'QuarantineCtrl as ctrl'
+    }).state('main.report', {
+      url: PATH.report,
+      templateUrl: 'views/report.html',
+      controller: 'ReportCtrl as ctrl'
     });
 
     $urlRouterProvider.otherwise(function() {

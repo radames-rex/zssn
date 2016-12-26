@@ -1,0 +1,16 @@
+{
+	"general" : {
+		"welcome" : "Zombie Survival Social Network",
+		"back" : "Voltar",
+		"others" : "Outros",
+		"error" : {
+			"request" : "Tente Novamente!"
+		}
+	},
+	"dashboard" : {
+		"localization" : "Minha Nova Localização",
+    "exchange" : "Trocar Itens",
+    "quarantine" : "Sobrevivente infectado",
+    "report" : "Relatório"
+	}
+}

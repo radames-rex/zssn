@@ -2,7 +2,7 @@
 
 describe('Controller: RepositoriesCtrl', function () {
 
-  beforeEach(module('challengeApp'));
+  beforeEach(module('zssnApp'));
 
   var RepositoriesCtrl,
     scope;

@@ -4,12 +4,12 @@
 
   /**
    * @ngdoc function
-   * @type zssnApp.controller:DashboardCtrl
+   * @type zssnApp.controller:QuanratineCtrl
    * @description
-   * # DashboardCtrl
+   * # QuanratineCtrl
    * Controller of the zssnApp
    */
-  var DashboardCtrl = function($scope) {
+  var QuanratineCtrl = function($scope) {
 
     // Mock-up info data
     $scope.datalist = [{
@@ -133,9 +133,9 @@
 
   };
 
-  DashboardCtrl.$inject = ['$scope'];
+  QuanratineCtrl.$inject = ['$scope'];
 
   angular
     .module('zssnApp')
-    .controller('DashboardCtrl', DashboardCtrl);
+    .controller('QuanratineCtrl', QuanratineCtrl);
 })();

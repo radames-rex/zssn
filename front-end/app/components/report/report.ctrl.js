@@ -4,12 +4,12 @@
 
   /**
    * @ngdoc function
-   * @type zssnApp.controller:DashboardCtrl
+   * @type zssnApp.controller:ReportCtrl
    * @description
-   * # DashboardCtrl
+   * # ReportCtrl
    * Controller of the zssnApp
    */
-  var DashboardCtrl = function($scope) {
+  var ReportCtrl = function($scope) {
 
     // Mock-up info data
     $scope.datalist = [{
@@ -133,9 +133,9 @@
 
   };
 
-  DashboardCtrl.$inject = ['$scope'];
+  ReportCtrl.$inject = ['$scope'];
 
   angular
     .module('zssnApp')
-    .controller('DashboardCtrl', DashboardCtrl);
+    .controller('ReportCtrl', ReportCtrl);
 })();
