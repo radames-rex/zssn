@@ -12,5 +12,13 @@
     "exchange" : "Trocar Itens",
     "quarantine" : "Sobrevivente infectado",
     "report" : "Relatório"
-	}
+	},
+  "survivor" : {
+    "name" : "Nome",
+    "age" : "Idade",
+    "genre" : "Sexo",
+    "male" : "Masculino",
+    "female" : "Feminino",
+    "coordinates" : "Coordenadas"
+  }
 }

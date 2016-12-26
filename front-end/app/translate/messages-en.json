@@ -12,5 +12,13 @@
     "exchange" : "Exchange Inventory",
     "quarantine" : "Survivor Infected",
     "report" : "Report"
-	}
+	},
+  "survivor" : {
+    "name" : "Name",
+    "age" : "Age",
+    "genre" : "Genre",
+    "male" : "Male",
+    "female" : "Female",
+    "coordinates" : "Coordinates"
+  }
 }
