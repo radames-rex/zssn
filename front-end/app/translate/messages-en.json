@@ -1,6 +1,6 @@
 {
 	"general" : {
-		"welcome" : "Dashboard",
+		"welcome" : "Zombie Survival Social Network",
 		"back" : "Back",
 		"others" : "Others",
 		"error" : {
@@ -8,13 +8,9 @@
 		}
 	},
 	"dashboard" : {
-		"type": "Changelist/Build",
-		"owner" : "Owner",
-		"time": "Time Started",
-		"state": "State",
-		"metrics": "Metrics",
-		"build": "Build",
-		"unit": "Unit Test",
-		"function": "Functional Test"
+    "localization" : "New Localization",
+    "exchange" : "Exchange Inventory",
+    "quarantine" : "Survivor Infected",
+    "report" : "Report"
 	}
 }

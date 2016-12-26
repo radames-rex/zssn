@@ -4,13 +4,13 @@
 
   /**
    * @ngdoc function
-   * @name zssnApp.factory:DashboardFactory
+   * @name zssnApp.factory:ReportFactory
    * @description
-   * # DashboardFactory
+   * # ReportFactory
    * Factory of the zssnApp
    */
-  var DashboardFactory = function(REQUEST, RequestFactory, $q) {
-    var DashboardFactory = {};
+  var ReportFactory = function(REQUEST, RequestFactory, $q) {
+    var ReportFactory = {};
 
     var repoFormatted = function() {
       return [{
@@ -34,11 +34,11 @@
       }];
     };
 
-    DashboardFactory.filterDashboard = function() {
+    ReportFactory.filterReport = function() {
       return repoFormatted();
     };
 
-    DashboardFactory.getDashboard = function(user) {
+    ReportFactory.getReport = function(user) {
       var defer = $q.defer();
       RequestFactory.get(REQUEST.github.url + REQUEST.github.users + user + REQUEST.github.repos).then(function(data) {
         data = data.data;
@@ -53,12 +53,12 @@
       return defer.promise;
     };
 
-    return DashboardFactory;
+    return ReportFactory;
   };
 
-  DashboardFactory.$inject = ['REQUEST', 'RequestFactory', '$q'];
+  ReportFactory.$inject = ['REQUEST', 'RequestFactory', '$q'];
 
   angular
     .module('zssnApp')
-    .factory('DashboardFactory', DashboardFactory);
+    .factory('ReportFactory', ReportFactory);
 })();

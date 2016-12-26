@@ -4,12 +4,12 @@
 
   /**
    * @ngdoc function
-   * @type zssnApp.controller:DashboardCtrl
+   * @type zssnApp.controller:ExchangeCtrl
    * @description
-   * # DashboardCtrl
+   * # ExchangeCtrl
    * Controller of the zssnApp
    */
-  var DashboardCtrl = function($scope) {
+  var ExchangeCtrl = function($scope) {
 
     // Mock-up info data
     $scope.datalist = [{
@@ -133,9 +133,9 @@
 
   };
 
-  DashboardCtrl.$inject = ['$scope'];
+  ExchangeCtrl.$inject = ['$scope'];
 
   angular
     .module('zssnApp')
-    .controller('DashboardCtrl', DashboardCtrl);
+    .controller('ExchangeCtrl', ExchangeCtrl);
 })();

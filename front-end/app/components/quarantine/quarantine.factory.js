@@ -4,13 +4,13 @@
 
   /**
    * @ngdoc function
-   * @name zssnApp.factory:DashboardFactory
+   * @name zssnApp.factory:QuarantineFactory
    * @description
-   * # DashboardFactory
+   * # QuarantineFactory
    * Factory of the zssnApp
    */
-  var DashboardFactory = function(REQUEST, RequestFactory, $q) {
-    var DashboardFactory = {};
+  var QuarantineFactory = function(REQUEST, RequestFactory, $q) {
+    var QuarantineFactory = {};
 
     var repoFormatted = function() {
       return [{
@@ -34,11 +34,11 @@
       }];
     };
 
-    DashboardFactory.filterDashboard = function() {
+    QuarantineFactory.filterQuarantine = function() {
       return repoFormatted();
     };
 
-    DashboardFactory.getDashboard = function(user) {
+    QuarantineFactory.getQuarantine = function(user) {
       var defer = $q.defer();
       RequestFactory.get(REQUEST.github.url + REQUEST.github.users + user + REQUEST.github.repos).then(function(data) {
         data = data.data;
@@ -53,12 +53,12 @@
       return defer.promise;
     };
 
-    return DashboardFactory;
+    return QuarantineFactory;
   };
 
-  DashboardFactory.$inject = ['REQUEST', 'RequestFactory', '$q'];
+  QuarantineFactory.$inject = ['REQUEST', 'RequestFactory', '$q'];
 
   angular
     .module('zssnApp')
-    .factory('DashboardFactory', DashboardFactory);
+    .factory('QuarantineFactory', QuarantineFactory);
 })();
