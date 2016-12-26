@@ -8,6 +8,7 @@
 		}
 	},
 	"dashboard" : {
+		"new" : "Novo Sobrevivente",
 		"localization" : "Minha Nova Localização",
     "exchange" : "Trocar Itens",
     "quarantine" : "Sobrevivente infectado",

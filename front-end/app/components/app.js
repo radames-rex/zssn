@@ -33,6 +33,15 @@ angular
     api: {
       url: 'http://zssn-backend-example.herokuapp.com/api',
       reports: '/report.json',
+      survivor: {
+        fetch: '/people/{id}.json',
+        new: '/people.json',
+        update: '/people/{id}.json',
+        items: '/people/{person_id}/properties.json',
+      },
+      survivors: '/people.json',
+      quarantine: '/people/{id}/report_infection.json',
+      exchange: '/people/{person_id}/properties/trade_item.json'
     }
   })
   .config(function($stateProvider, $urlRouterProvider, $translateProvider, PATH) {

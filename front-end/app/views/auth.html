@@ -1,0 +1,65 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>{{ 'dashboard.new' | translate}}</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="auth">
+        <form class="auth__modal">
+          <md-grid-list md-cols="5" md-row-height="42px" md-gutter="10px">
+            <md-grid-tile md-colspan="5" md-rowspan="2">
+              <md-input-container>
+                <label>{{ 'survivor.name' | translate }}</label>
+                <input type="text" name="name" ng-model="name" required md-maxlength="100" minlength="10">
+              </md-input-container>
+            </md-grid-tile>
+            <md-grid-tile md-colspan="2" md-rowspan="1">
+              <md-input-container>
+                <label>{{ 'survivor.age' | translate }}</label>
+                <input type="number" name="age" ng-model="age" required md-maxlength="100" minlength="10">
+              </md-input-container>
+            </md-grid-tile>
+            <md-grid-tile md-colspan="1" md-rowspan="1">
+              <p class="auth__label">{{ 'survivor.gender' | translate }}:
+                <span class="radioValue">{{ gender }}</span>
+              </p>
+              <md-radio-group ng-model="gender">
+                <md-radio-button value="male" class="md-primary">{{ 'survivor.male' | translate }}</md-radio-button>
+                <md-radio-button value="female">{{ 'survivor.female' | translate }}</md-radio-button>
+              </md-radio-group>
+            </md-grid-tile>
+            <md-grid-tile md-colspan="2" md-rowspan="1">
+              <md-input-container>
+                <label>{{ 'survivor.inventory' | translate }}</label>
+                <md-select ng-model="inventory" multiple>
+                  <md-optgroup label="{{ 'survivor.inventory' | translate }}">
+                    <md-option ng-value="topping.name" ng-repeat="topping in inventory | filter: {category: 'meat' }">{{topping.name}}</md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </md-grid-tile>
+            <md-grid-tile md-colspan="5" md-rowspan="3">
+              <md-input-container>
+                <label>{{ 'survivor.coordinates' | translate }}</label>
+                <input name="coordinates" ng-model="coordinates" required md-maxlength="100" minlength="10">
+              </md-input-container>
+            </md-grid-tile>
+          </md-grid-list>
+        </form>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button class="md-warn" ng-click="cancel()">
+        <i class="fa fa-minus" aria-hidden="true"></i> Fechar
+      </md-button>
+      <md-button class="md-primary" ng-click="newSurvivor()">
+        <i class="fa fa-plus" aria-hidden="true"></i> New
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

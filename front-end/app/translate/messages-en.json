@@ -8,6 +8,7 @@
 		}
 	},
 	"dashboard" : {
+		"new" : "New Survivor",
     "localization" : "New Localization",
     "exchange" : "Exchange Inventory",
     "quarantine" : "Survivor Infected",
@@ -16,7 +17,7 @@
   "survivor" : {
     "name" : "Name",
     "age" : "Age",
-    "gender" : "gender",
+    "gender" : "Gender",
     "male" : "Male",
     "female" : "Female",
     "inventory" : "Inventory",
