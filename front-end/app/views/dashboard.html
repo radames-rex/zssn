@@ -1,9 +1,9 @@
 <div class="demo-md-panel md-padding dashboard">
   <div class="dashboard__header">
     <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.survivor()">{{ 'dashboard.localization' | translate }}</md-button>
-    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.survivor()">{{ 'dashboard.exchange' | translate }}</md-button>
-    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.survivor()">{{ 'dashboard.quarantine' | translate }}</md-button>
-    <md-button class="md-raised md-warn dashboard__header--item" ui-sref="main.dashboard.survivor()">{{ 'dashboard.report' | translate }}</md-button>
+    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.exchange()">{{ 'dashboard.exchange' | translate }}</md-button>
+    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.quarantine()">{{ 'dashboard.quarantine' | translate }}</md-button>
+    <md-button class="md-raised md-warn dashboard__header--item" ui-sref="main.dashboard.report()">{{ 'dashboard.report' | translate }}</md-button>
   </div>
 
   <div class="dashboard__content" ui-view></div>
