@@ -9,12 +9,14 @@
     <md-content>
       <md-list flex>
         <md-subheader class="md-no-sticky">{{ 'report.theme' | translate }} {{ '26.12.2016' }}</md-subheader>
-        <md-list-item class="md-3-line" ng-repeat="item in report" ng-click="null">
-          <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.indicator}}"/>
+        <md-list-item class="md-3-line" ng-repeat="item in reports" ng-click="null">
+          <img ng-src="images/icons/wall-blue.png" class="md-avatar" alt="{{item.description}}"/>
           <div class="md-list-item-text" layout="column">
-            <h3>{{ item.indicator }}</h3>
-            <h4>{{ item.value }}</h4>
-            <p>{{ item.description }}</p>
+            <h3>{{ item.description }}</h3>
+            <div ng-repeat="ind in item.indicators">
+              <h4>{{ ind.name }}</h4>
+              <p>{{ ind.value }}</p>
+            </div>
           </div>
           <md-divider ></md-divider>
         </md-list-item>

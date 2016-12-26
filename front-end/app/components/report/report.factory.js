@@ -12,38 +12,45 @@
   var ReportFactory = function(REQUEST, RequestFactory, $q) {
     var ReportFactory = {};
 
-    var repoFormatted = function() {
-      return [{
-        owner: "@radames-rex",
-        name: "nvd3js-vhline",
-        language: "js",
-        stars: "3",
-        forks: "1"
-      }, {
-        owner: "@radames-rex",
-        name: "zionmvc",
-        language: "php",
-        stars: "2",
-        forks: "1"
-      }, {
-        owner: "@radames-rex",
-        name: "starbus-api",
-        language: "ruby",
-        stars: "5",
-        forks: "1"
-      }];
+    var formatReport = function(data){
+      var formatted = {
+        description: "",
+        indicators: [],
+      };
+      angular.forEach(data.report, function(value, key){
+        if(key === 'description'){
+          formatted.description = value;
+        }else {
+          formatted.indicators.push({
+            name: key.replace(/_/gi, " "),
+            value: value
+          });
+        }
+      });
+      return formatted;
     };
 
-    ReportFactory.filterReport = function() {
-      return repoFormatted();
-    };
-
-    ReportFactory.getReport = function(user) {
-      var defer = $q.defer();
-      RequestFactory.get(REQUEST.github.url + REQUEST.github.users + user + REQUEST.github.repos).then(function(data) {
+    ReportFactory.getReport = function() {
+      var defer = $q.defer(),
+        reports = [];
+      RequestFactory.get(REQUEST.api.url + REQUEST.api.reports).then(function(data) {
         data = data.data;
         if (typeof data === 'object') {
-          defer.resolve(data);
+
+          angular.forEach(data, function(value) {
+            RequestFactory.get(value).then(function(data) {
+              data = data.data;
+              if (typeof data === 'object') {
+                reports.push(formatReport(data));
+              } else {
+                defer.reject("hasnt object");
+              }
+            }, function(response, status) {
+              defer.reject(response, status);
+            });
+          });
+
+          defer.resolve(reports);
         } else {
           defer.reject("hasnt object");
         }
