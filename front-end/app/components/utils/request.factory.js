@@ -40,7 +40,25 @@
       if (isOnline()) {
         return $http.get(url);
       }
-    }
+    };
+
+    /**
+     * Monta uma requisição Post simples.
+     * @author Rádames Santiago <radames@infoway-pi.com.br>
+     * @name postSimple
+     * @function
+     * @param {string} url Url da requisição.
+     * @param {object} data Parâmetros.
+     * @param {boolean} withoutLoader Sem Loader.
+     * @param {boolean} withFilterLoader Com Loader do Filtro.
+     * @returns {object} Promessa da requisição.
+     * @memberof RequestFactory
+     */
+    RequestFactory.postSimple = function(url,params) {
+      if (isOnline()) {
+        return $http.post(url,params);
+      }
+    };
 
     /**
      * Monta uma requisição Post.
@@ -66,11 +84,11 @@
           }
         });
       }
-    }
+    };
 
 
     return RequestFactory;
-  }
+  };
 
   RequestFactory.$inject = ['$rootScope', '$http'];
 
