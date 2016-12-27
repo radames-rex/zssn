@@ -32,18 +32,17 @@
       return defer.promise;
     };
 
-    AuthFactory.setUUID = function() {
-
+    AuthFactory.setUUID = function(UUID) {
+      localStorage.setItem('UUID',UUID);
     };
 
     AuthFactory.getUUID = function() {
-      var UUID = null;
-      
+      var UUID = localStorage.getItem('UUID');
       return UUID;
     };
 
     AuthFactory.hasUUID = function() {
-      return AuthFactory.getUUID() !== null;
+      return AuthFactory.getUUID() !== undefined;
     };
 
     return AuthFactory;
