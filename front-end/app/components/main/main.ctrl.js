@@ -11,7 +11,7 @@
    */
   var MainCtrl = function($scope, $mdDialog) {
 
-    function DialogController($scope, $mdDialog) {
+    var DialogController = function($scope, $mdDialog) {
       $scope.hide = function() {
         $mdDialog.hide();
       };
@@ -26,7 +26,7 @@
     }
 
     $mdDialog.show({
-      // controller: AuthCtrl,
+      controller: DialogController,
       templateUrl: '/views/auth.html',
       parent: angular.element(document.body),
       clickOutsideToClose: false,

@@ -9,41 +9,38 @@
    * # AuthCtrl
    * Controller of the zssnApp
    */
-  var AuthCtrl = function($scope, AuthFactory) {
+  var AuthCtrl = function($scope, $rootScope, AuthFactory) {
 
     if (AuthFactory.getUUID() !== undefined) {
-      $scope.logged = false;
-    } else {
       $scope.logged = true;
+    } else {
+      $scope.logged = false;
     }
 
-    // $scope.name = "";
-    // $scope.age = "";
-    // $scope.gender = "";
-    // $scope.coordinates = "";
-    $scope.inventory = [{
-      name: "Water",
-      amount: 0
-    },{
-      name: "Food",
-      amount: 0
-    },{
-      name: "Medication",
-      amount: 0
-    },{
-      name: "Ammunition",
-      amount: 0
-    }];
+    var normalizeCoordinates = function(coordinates) {
+      return "POINT (" + coordinates.lat + " " + coordinates.lon + ")";
+    };
+
+    var normalizeInventory = function(inventory) {
+      return "Water:" + inventory.water +
+        ";Food:" + inventory.food +
+        ";Medication:" + inventory.medication +
+        ";Ammunition:" + inventory.ammunition + ";";
+    };
 
     $scope.newSurvivor = function() {
-      AuthFactory.getAuth($scope.survivorForm.name, $scope.survivorForm.age, $scope.survivorForm.gender, $scope.survivorForm.coordinates, $scope.survivorForm.inventory).then(function(data) {
-        AuthFactory.setUUID(data.UUID);
+      AuthFactory.getAuth($scope.ctrl.name,
+        $scope.ctrl.age, $scope.ctrl.gender,
+          normalizeCoordinates($scope.ctrl.coordinates),
+            normalizeInventory($scope.ctrl.inventory)).then(function(data) {
+        AuthFactory.setUUID(data.id);
+        
       });
     };
 
   };
 
-  AuthCtrl.$inject = ['$scope', 'AuthFactory'];
+  AuthCtrl.$inject = ['$scope', '$rootScope', 'AuthFactory'];
 
   angular
     .module('zssnApp')

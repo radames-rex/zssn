@@ -20,8 +20,17 @@
     "gender" : "Gender",
     "male" : "Male",
     "female" : "Female",
-    "inventory" : "Inventory",
-    "coordinates" : "Coordinates"
+    "inventory" : {
+			"title": "Inventory",
+			"water": "Water",
+			"food" : "Food",
+			"medication" : "Medication",
+			"ammunition" : "Ammunition"
+		},
+    "coordinates" : {
+				"lat" : "Latitude",
+				"lon" : "Longitude"
+		}
   },
   "report" : {
     "name" : "Report",
