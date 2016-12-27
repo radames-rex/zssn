@@ -26,17 +26,17 @@
     }
 
     $mdDialog.show({
-        controller: DialogController,
-        templateUrl: '/views/auth.html',
-        parent: angular.element(document.body),
-        clickOutsideToClose: false,
-        fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-      })
-      .then(function(answer) {
-        $scope.status = 'You said the information was "' + answer + '".';
-      }, function() {
-        $scope.status = 'You cancelled the dialog.';
-      });
+      // controller: AuthCtrl,
+      templateUrl: '/views/auth.html',
+      parent: angular.element(document.body),
+      clickOutsideToClose: false,
+      fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
 
   };
 

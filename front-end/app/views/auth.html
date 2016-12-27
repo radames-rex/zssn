@@ -1,5 +1,5 @@
-<md-dialog aria-label="Mango (Fruit)">
-  <form name="survivorForm" ng-cloak>
+<md-dialog aria-label="{{ 'dashboard.new' | translate}}" ng-controller="AuthCtrl as ctrl">
+  <form name="survivorForm" ng-submit="newSurvivor()" ng-cloak>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>{{ 'dashboard.new' | translate}}</h2>
@@ -9,18 +9,18 @@
 
     <md-dialog-content>
       <div class="auth">
-        <form class="auth__modal">
+        <div class="auth__modal">
           <md-grid-list md-cols="5" md-row-height="42px" md-gutter="10px">
             <md-grid-tile md-colspan="5" md-rowspan="2">
               <md-input-container>
                 <label>{{ 'survivor.name' | translate }}</label>
-                <input type="text" name="name" ng-model="name" required md-maxlength="100">
+                <input type="text" name="name" ng-model="name" required>
               </md-input-container>
             </md-grid-tile>
             <md-grid-tile md-colspan="2" md-rowspan="1">
               <md-input-container>
                 <label>{{ 'survivor.age' | translate }}</label>
-                <input type="number" name="age" ng-model="age" required md-maxlength="100">
+                <input type="number" name="age" ng-model="age" required>
               </md-input-container>
             </md-grid-tile>
             <md-grid-tile md-colspan="1" md-rowspan="1">
@@ -35,11 +35,11 @@
             <md-grid-tile md-colspan="2" md-rowspan="1">
               <md-input-container>
                 <label>{{ 'survivor.inventory' | translate }}</label>
-                <!-- <md-select ng-model="inventory" multiple>
+                <md-select ng-model="inventory" multiple>
                   <md-optgroup label="{{ 'survivor.inventory' | translate }}">
-                    <md-option ng-value="topping.name" ng-repeat="topping in inventory | filter: {category: 'meat' }">{{topping.name}}</md-option>
+                    <md-option ng-repeat="item in inventory" ng-value="item.name">{{item.name}}</md-option>
                   </md-optgroup>
-                </md-select> -->
+                </md-select>
               </md-input-container>
             </md-grid-tile>
             <md-grid-tile md-colspan="5" md-rowspan="3">
@@ -49,12 +49,12 @@
               </md-input-container>
             </md-grid-tile>
           </md-grid-list>
-        </form>
+        </div>
       </div>
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      <md-button class="md-primary" ng-click="newSurvivor()" ng-disabled="survivorForm.$invalid" type="submit">
+      <md-button class="md-primary" type="submit" ng-disabled="survivorForm.$invalid">
         <i class="fa fa-plus" aria-hidden="true"></i> New
       </md-button>
     </md-dialog-actions>
