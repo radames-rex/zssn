@@ -56,7 +56,7 @@
      */
     RequestFactory.postSimple = function(url,params) {
       if (isOnline()) {
-        return $http.post(url,params);
+        return $http.post(url+params);
       }
     };
 

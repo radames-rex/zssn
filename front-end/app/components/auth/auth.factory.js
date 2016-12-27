@@ -12,7 +12,7 @@
   var AuthFactory = function(REQUEST, RequestFactory, $q) {
     var AuthFactory = {};
 
-    AuthFactory.getAuth = function(name, age, gender, inventory, coordinates) {
+    AuthFactory.getAuth = function(name, age, gender, coordinates, inventory) {
       var defer = $q.defer(),
         params = '?person[name]=' + name +
         '&person[age]=' + age +
@@ -21,7 +21,7 @@
         '&items=' + inventory;
       RequestFactory.postSimple(REQUEST.api.url + REQUEST.api.survivor.new, params).then(function(data) {
         data = data.data;
-        if (typeof data === 'object') {
+        if (data.id !== undefined) {
           defer.resolve(data);
         } else {
           defer.reject("hasnt object");
