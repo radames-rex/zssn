@@ -32,6 +32,11 @@
 				"lon" : "Longitude"
 		}
   },
+  "quarantine" : {
+    "search" : "Buscar sobrevivente ...",
+    "infect" : "Relatar Infecção",
+    "survivor" : "Sobrevivente não Infectado:"
+  },
   "report" : {
     "name" : "Relatório",
     "theme" : "Relatório para "
