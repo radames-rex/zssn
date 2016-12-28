@@ -45,7 +45,7 @@ angular
       exchange: '/people/{person_id}/properties/trade_item.json'
     }
   })
-  .config(function($stateProvider, $urlRouterProvider, $translateProvider, PATH) {
+  .config(function($stateProvider, $urlRouterProvider, $translateProvider, PATH, $mdThemingProvider) {
 
     /* Configuração do provider de universalização e da linguagem padrão. */
     $translateProvider.useStaticFilesLoader({
@@ -53,6 +53,11 @@ angular
       suffix: '.json'
     });
     $translateProvider.preferredLanguage('en');
+
+    /*Configuração do Tema. */
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue-grey')
+      .accentPalette('purple');
 
     /* Configuração dos estados e rotas da aplicação */
     $stateProvider.state('main', {
