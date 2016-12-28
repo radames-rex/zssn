@@ -1,3 +1,77 @@
 <div class="exchange">
+  <form class="exchange" name="exchangeEditForm" ng-submit="trade()" >
+    <md-grid-list md-cols="5" md-row-height="14px" md-gutter="10px">
+      <md-grid-tile md-colspan="1" md-rowspan="8">
+        <md-input-container>
+          <label>{{ 'exchange.recipient' | translate }}</label>
+          <input type="text" name="recipient" ng-model="ctrl.recipient" required>
+        </md-input-container>
+      </md-grid-tile>
 
+      <md-grid-tile md-colspan="1" md-rowspan="8">
+        <label class="auth__label">{{ 'exchange.inventory.your.title' | translate }}:</label>
+      </md-grid-tile>
+
+      <md-grid-tile md-colspan="1" md-rowspan="2">
+        <md-input-container>
+          <label>{{ 'exchange.inventory.your.water' | translate }}</label>
+          <input type="number" name="water" ng-model="ctrl.inventory.your.water">
+        </md-input-container>
+      </md-grid-tile>
+      <md-grid-tile md-colspan="1" md-rowspan="2">
+        <md-input-container>
+          <label>{{ 'exchange.inventory.your.food' | translate }}</label>
+          <input type="number" name="food" ng-model="ctrl.inventory.your.food">
+        </md-input-container>
+      </md-grid-tile>
+      <md-grid-tile md-colspan="1" md-rowspan="2">
+        <md-input-container>
+          <label>{{ 'exchange.inventory.your.medication' | translate }}</label>
+          <input type="number" name="medication" ng-model="ctrl.inventory.your.medication">
+        </md-input-container>
+      </md-grid-tile>
+      <md-grid-tile md-colspan="1" md-rowspan="2">
+        <md-input-container>
+          <label>{{ 'exchange.inventory.your.ammunition' | translate }}</label>
+          <input type="number" name="ammunition" ng-model="ctrl.inventory.your.ammunition">
+        </md-input-container>
+      </md-grid-tile>
+
+      <md-grid-tile md-colspan="1" md-rowspan="8">
+        <label class="auth__label">{{ 'exchange.inventory.recipient.title' | translate }}:</label>
+      </md-grid-tile>
+
+      <md-grid-tile md-colspan="1" md-rowspan="2">
+        <md-input-container>
+          <label>{{ 'exchange.inventory.recipient.water' | translate }}</label>
+          <input type="number" name="water" ng-model="ctrl.inventory.recipient.water">
+        </md-input-container>
+      </md-grid-tile>
+      <md-grid-tile md-colspan="1" md-rowspan="2">
+        <md-input-container>
+          <label>{{ 'exchange.inventory.recipient.food' | translate }}</label>
+          <input type="number" name="food" ng-model="ctrl.inventory.recipient.food">
+        </md-input-container>
+      </md-grid-tile>
+      <md-grid-tile md-colspan="1" md-rowspan="2">
+        <md-input-container>
+          <label>{{ 'exchange.inventory.recipient.medication' | translate }}</label>
+          <input type="number" name="medication" ng-model="ctrl.inventory.recipient.medication">
+        </md-input-container>
+      </md-grid-tile>
+      <md-grid-tile md-colspan="1" md-rowspan="2">
+        <md-input-container>
+          <label>{{ 'exchange.inventory.recipient.ammunition' | translate }}</label>
+          <input type="number" name="ammunition" ng-model="ctrl.inventory.recipient.ammunition">
+        </md-input-container>
+      </md-grid-tile>
+
+      <md-grid-tile md-colspan="5" md-rowspan="2">
+        <md-button class="md-primary" type="submit" ng-disabled="exchangeForm.$invalid">
+          <i class="fa fa-handshake-o" aria-hidden="true"></i>
+          Trade
+        </md-button>
+      </md-grid-tile>
+    </md-grid-list>
+  </form>
 </div>

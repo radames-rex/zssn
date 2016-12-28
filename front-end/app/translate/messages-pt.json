@@ -37,6 +37,25 @@
     "infect" : "Relatar Infecção",
     "survivor" : "Sobrevivente não Infectado:"
   },
+  "exchange" : {
+    "recipient" : "Destinatário",
+    "inventory" : {
+      "your" : {
+        "title" : "Sua Oferta",
+        "water": "Água",
+  			"food" : "Comida",
+  			"medication" : "Medicação",
+  			"ammunition" : "Munição"
+      },
+      "recipient" : {
+        "title" : "Oferta do Destinatário",
+        "water": "Água",
+  			"food" : "Comida",
+  			"medication" : "Medicação",
+  			"ammunition" : "Munição"
+      }
+    }
+  },
   "report" : {
     "name" : "Relatório",
     "theme" : "Relatório para "
