@@ -23,7 +23,7 @@
       $scope.answer = function(answer) {
         $mdDialog.hide(answer);
       };
-    }
+    };
 
     $mdDialog.show({
       controller: DialogController,
