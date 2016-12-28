@@ -12,35 +12,12 @@
   var ExchangeFactory = function(REQUEST, RequestFactory, $q) {
     var ExchangeFactory = {};
 
-    var repoFormatted = function() {
-      return [{
-        owner: "@radames-rex",
-        name: "nvd3js-vhline",
-        language: "js",
-        stars: "3",
-        forks: "1"
-      }, {
-        owner: "@radames-rex",
-        name: "zionmvc",
-        language: "php",
-        stars: "2",
-        forks: "1"
-      }, {
-        owner: "@radames-rex",
-        name: "starbus-api",
-        language: "ruby",
-        stars: "5",
-        forks: "1"
-      }];
-    };
-
-    ExchangeFactory.filterExchange = function() {
-      return repoFormatted();
-    };
-
-    ExchangeFactory.getExchange = function(user) {
-      var defer = $q.defer();
-      RequestFactory.get(REQUEST.github.url + REQUEST.github.users + user + REQUEST.github.repos).then(function(data) {
+    ExchangeFactory.trade = function(name, pick, payment) {
+      var defer = $q.defer(),
+        params = '?consumer[name]=' + name +
+        '&consumer[pick]=' + pick +
+        '&consumer[payment]=' + payment;
+      RequestFactory.post(REQUEST.api.url + (REQUEST.api.exchange.replace('{person_id}',localStorage.getItem('UUID'))), params).then(function(data) {
         data = data.data;
         if (typeof data === 'object') {
           defer.resolve(data);

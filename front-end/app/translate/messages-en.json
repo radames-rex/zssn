@@ -37,6 +37,25 @@
     "infect" : "Report Infection",
     "survivor" : "Survivor not Infected:"
   },
+  "exchange" : {
+    "recipient" : "Recipient",
+    "inventory" : {
+      "your" : {
+        "title" : "Your Offer",
+        "water": "Water",
+        "food" : "Food",
+        "medication" : "Medication",
+        "ammunition" : "Ammunition"
+      },
+      "recipient" : {
+        "title" : "Recipient Offer",
+        "water": "Water",
+        "food" : "Food",
+        "medication" : "Medication",
+        "ammunition" : "Ammunition"
+      }
+    }
+  },
   "report" : {
     "name" : "Report",
     "theme" : "Report for "
