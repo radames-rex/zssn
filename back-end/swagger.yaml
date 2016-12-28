@@ -1,0 +1,154 @@
+swagger: '2.0'
+info:
+  title: ZSSN API
+  description: Move your app forward with the Uber API
+  version: "1.0.0"
+host: 127.0.0.1
+schemes:
+  - http
+  - https
+basePath: /api
+produces:
+  - application/json
+paths:
+  /survivor:
+    post:
+      summary: Register a new survivor.
+      description: |
+        Receive a Person with its Inventory of Items.
+      parameters:
+        - name: person[name]
+          in: query
+          description: Survivor Full Name.
+          required: true
+          type: string
+        - name: person[age]
+          in: query
+          description: Survivor Age.
+          required: true
+          type: string
+        - name: person[gender]
+          in: query
+          description: Survivor Gender.
+          required: true
+          type: string
+        - name: person[lonlat]
+          in: query
+          description: Survivor latitude x longitude in the format 'point(-0000.111, 1111.000)'.
+          required: false
+          type: string
+        - name: items
+          in: query
+          description: Inventory Items in the format 'Water:10;Food:5'.
+          required: true
+          type: string
+      tags:
+        - Survivor
+      responses:
+        200:
+          description: An array of products
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /products:
+    get:
+      summary: Product Types
+      description: |
+        The Products endpoint returns information about the *Uber* products
+        offered at a given location. The response includes the display name
+        and other details about each product, and lists the products in the
+        proper display order.
+      parameters:
+        - name: latitude
+          in: query
+          description: Latitude component of location.
+          required: true
+          type: number
+          format: double
+        - name: longitude
+          in: query
+          description: Longitude component of location.
+          required: true
+          type: number
+          format: double
+      tags:
+        - Trade
+      responses:
+        200:
+          description: An array of products
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /produckts:
+    get:
+      summary: Product Types
+      description: |
+        The Products endpoint returns information about the *Uber* products
+        offered at a given location. The response includes the display name
+        and other details about each product, and lists the products in the
+        proper display order.
+      parameters:
+        - name: latitude
+          in: query
+          description: Latitude component of location.
+          required: true
+          type: number
+          format: double
+        - name: longitude
+          in: query
+          description: Longitude component of location.
+          required: true
+          type: number
+          format: double
+      tags:
+        - Report
+      responses:
+        200:
+          description: An array of products
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Product:
+    type: object
+    properties:
+      product_id:
+        type: string
+        description: Unique identifier representing a specific product for a given latitude & longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles.
+      description:
+        type: string
+        description: Description of product.
+      display_name:
+        type: string
+        description: Display name of product.
+      capacity:
+        type: string
+        description: Capacity of product. For example, 4 people.
+      image:
+        type: string
+        description: Image URL representing the product.
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
