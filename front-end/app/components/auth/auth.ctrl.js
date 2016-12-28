@@ -34,7 +34,6 @@
           normalizeCoordinates($scope.ctrl.coordinates),
             normalizeInventory($scope.ctrl.inventory)).then(function(data) {
         AuthFactory.setUUID(data.id);
-        
       });
     };
 

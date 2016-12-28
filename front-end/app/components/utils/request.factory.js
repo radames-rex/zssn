@@ -43,9 +43,9 @@
     };
 
     /**
-     * Monta uma requisição Post simples.
+     * Monta uma requisição Post.
      * @author Rádames Santiago <radames@infoway-pi.com.br>
-     * @name postSimple
+     * @name post
      * @function
      * @param {string} url Url da requisição.
      * @param {object} data Parâmetros.
@@ -54,14 +54,32 @@
      * @returns {object} Promessa da requisição.
      * @memberof RequestFactory
      */
-    RequestFactory.postSimple = function(url,params) {
+    RequestFactory.post = function(url,params) {
       if (isOnline()) {
         return $http.post(url+params);
       }
     };
 
     /**
-     * Monta uma requisição Post.
+     * Monta uma requisição Patch.
+     * @author Rádames Santiago <radames@infoway-pi.com.br>
+     * @name post
+     * @function
+     * @param {string} url Url da requisição.
+     * @param {object} data Parâmetros.
+     * @param {boolean} withoutLoader Sem Loader.
+     * @param {boolean} withFilterLoader Com Loader do Filtro.
+     * @returns {object} Promessa da requisição.
+     * @memberof RequestFactory
+     */
+    RequestFactory.patch = function(url,params) {
+      if (isOnline()) {
+        return $http.patch(url+params);
+      }
+    };
+
+    /**
+     * Monta uma requisição Post Completa.
      * @author Rádames Santiago <radames@infoway-pi.com.br>
      * @name get
      * @function
@@ -72,7 +90,7 @@
      * @returns {object} Promessa da requisição.
      * @memberof RequestFactory
      */
-    RequestFactory.post = function(url, body) {
+    RequestFactory.postFull = function(url, body) {
       if (isOnline()) {
         return $http({
           url: url,

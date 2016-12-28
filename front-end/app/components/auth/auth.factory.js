@@ -19,7 +19,7 @@
         '&person[gender]=' + gender +
         '&person[lonlat]=' + coordinates +
         '&items=' + inventory;
-      RequestFactory.postSimple(REQUEST.api.url + REQUEST.api.survivor.new, params).then(function(data) {
+      RequestFactory.post(REQUEST.api.url + REQUEST.api.survivor.new, params).then(function(data) {
         data = data.data;
         if (data.id !== undefined) {
           defer.resolve(data);
