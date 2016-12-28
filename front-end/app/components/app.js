@@ -19,7 +19,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
-    'ngMaterial'
+    'ngMaterial',
+    'ngMap'
   ])
   .constant('PATH', {
     main: '/main',
