@@ -11,7 +11,7 @@
    */
   var AuthCtrl = function($scope, $rootScope, AuthFactory) {
 
-    if (AuthFactory.getUUID() !== undefined) {
+    if (AuthFactory.hasUUID()) {
       $scope.logged = true;
     } else {
       $scope.logged = false;

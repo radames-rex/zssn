@@ -42,7 +42,7 @@
     };
 
     AuthFactory.hasUUID = function() {
-      return AuthFactory.getUUID() !== undefined;
+      return AuthFactory.getUUID() != undefined;
     };
 
     return AuthFactory;
