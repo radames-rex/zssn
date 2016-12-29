@@ -53,6 +53,7 @@ angular
       suffix: '.json'
     });
     $translateProvider.preferredLanguage('en');
+    // $translateProvider.preferredLanguage(navigator.language);
 
     /*Configuração do Tema. */
     $mdThemingProvider.theme('default')

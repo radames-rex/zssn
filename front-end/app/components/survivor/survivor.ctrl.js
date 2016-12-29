@@ -26,7 +26,7 @@
         if (data !== undefined) {
           Toast.showSuccessToast("Success!");
         }else {
-          Toast.showErrorToast("Success!");
+          Toast.showErrorToast("Error!");
         }
       });
     };

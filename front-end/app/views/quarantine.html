@@ -7,13 +7,15 @@
     </md-input-container>
   </div>
   <div class="quarantine__result">
-    <div class="quarantine__survivor" ng-repeat="s in survivors | filter:search | orderBy:order">
-      <div class="quarantine__survivor--id">
-        {{'quarantine.survivor' | translate}} {{ s.name }}
-      </div>
-      <div class="quarantine__survivor--infect">
-        <md-button class="md-raised md-warn" ng-click="infect(s.location)">{{ 'quarantine.infect' | translate }}</md-button>
-      </div>
-    </div>
+    <md-grid-list md-cols="4" md-row-height="14px" md-gutter="4px">
+      <md-grid-tile class="quarantine__survivor" md-colspan="1" md-rowspan="4" ng-repeat="s in survivors | filter:search | orderBy:order">
+        <div class="quarantine__survivor--id">
+          {{'quarantine.survivor' | translate}} {{ s.name }}
+        </div>
+        <div class="quarantine__survivor--infect">
+          <md-button class="md-raised md-warn" ng-click="infect(s.location)">{{ 'quarantine.infect' | translate }}</md-button>
+        </div>
+      </md-grid-tile>
+    </md-grid-list>
   </div>
 </div>
