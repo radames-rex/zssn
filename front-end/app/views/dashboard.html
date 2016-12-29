@@ -1,9 +1,21 @@
 <div class="demo-md-panel md-padding dashboard">
   <div class="dashboard__header">
-    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.survivor()">{{ 'dashboard.localization' | translate }}</md-button>
-    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.exchange()">{{ 'dashboard.exchange' | translate }}</md-button>
-    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.quarantine()">{{ 'dashboard.quarantine' | translate }}</md-button>
-    <md-button class="md-raised md-warn dashboard__header--item" ui-sref="main.dashboard.report()">{{ 'dashboard.report' | translate }}</md-button>
+    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.survivor()">
+      <md-icon md-svg-icon="images/svg/new-location.svg" aria-label="Edit"></md-icon>
+      {{ 'dashboard.localization' | translate }}
+     </md-button>
+    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.exchange()">
+      <md-icon md-svg-icon="images/svg/trade.svg" aria-label="Trade"></md-icon>
+      {{ 'dashboard.exchange' | translate }}
+    </md-button>
+    <md-button class="md-raised md-primary dashboard__header--item" ui-sref="main.dashboard.quarantine()">
+      <md-icon md-svg-icon="images/svg/infected.svg" aria-label="Quarantine"></md-icon>
+      {{ 'dashboard.quarantine' | translate }}
+    </md-button>
+    <md-button class="md-raised md-warn dashboard__header--item" ui-sref="main.dashboard.report()">
+      <md-icon md-svg-icon="images/svg/reports.svg" aria-label="Report"></md-icon>
+      {{ 'dashboard.report' | translate }}
+    </md-button>
   </div>
 
   <div class="dashboard__content" ui-view></div>

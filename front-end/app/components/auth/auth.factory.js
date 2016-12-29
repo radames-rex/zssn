@@ -36,6 +36,12 @@
       localStorage.setItem('UUID',UUID);
     };
 
+    AuthFactory.setUser = function(name, age, gender) {
+      localStorage.setItem('user.name',name);
+      localStorage.setItem('user.age',age);
+      localStorage.setItem('user.gender',gender);
+    };
+
     AuthFactory.getUUID = function() {
       var UUID = localStorage.getItem('UUID');
       return UUID;

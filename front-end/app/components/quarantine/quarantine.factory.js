@@ -31,9 +31,9 @@
       var defer = $q.defer(),
         params = "?infected="+localStorage.getItem('UUID');
       RequestFactory.post(REQUEST.api.url + (REQUEST.api.quarantine.replace('{id}',id)), params).then(function(data) {
-        data = data.data;
-        if (typeof data === 'object') {
-          defer.resolve(data);
+        data = data.status;
+        if (data === 204) {
+          defer.resolve(true);
         } else {
           defer.reject("hasnt object");
         }

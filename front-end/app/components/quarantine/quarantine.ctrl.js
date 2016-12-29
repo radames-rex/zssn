@@ -9,14 +9,17 @@
    * # QuarantineCtrl
    * Controller of the zssnApp
    */
-  var QuarantineCtrl = function($scope, QuarantineFactory) {
+  var QuarantineCtrl = function($scope, QuarantineFactory, Toast) {
     $scope.survivors = [];
-    $scope.message = "";
 
     $scope.infect = function(id) {
       id = id.replace('http://zssn-backend-example.herokuapp.com/api/people/','');
       QuarantineFactory.reportInfection(id).then(function(data){
-        $scope.message = "Reported!"
+        if(data){
+          Toast.showSuccessToast("Reported!");
+        }else {
+          Toast.showErrorToast("Error!");
+        }
       });
     };
 
@@ -30,7 +33,7 @@
 
   };
 
-  QuarantineCtrl.$inject = ['$scope', 'QuarantineFactory'];
+  QuarantineCtrl.$inject = ['$scope', 'QuarantineFactory', 'Toast'];
 
   angular
     .module('zssnApp')

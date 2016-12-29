@@ -18,7 +18,7 @@
         '&person[age]=' + age +
         '&person[gender]=' + gender +
         '&person[lonlat]=' + coordinates;
-      RequestFactory.patch(REQUEST.api.url + (REQUEST.api.survivor.update.replace('/{id}/',id)), params).then(function(data) {
+      RequestFactory.patch(REQUEST.api.url + (REQUEST.api.survivor.update.replace('{id}',id)), params).then(function(data) {
         data = data.data;
         if (data.id !== undefined) {
           defer.resolve(data);
