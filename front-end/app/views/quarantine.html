@@ -7,7 +7,7 @@
     </md-input-container>
   </div>
   <div class="quarantine__result">
-    <md-grid-list md-cols="4" md-row-height="14px" md-gutter="4px">
+    <md-grid-list md-cols="4" md-cols-xs="1" md-row-height="14px" md-gutter="4px">
       <md-grid-tile class="quarantine__survivor" md-colspan="1" md-rowspan="4" ng-repeat="s in survivors | filter:search | orderBy:order">
         <div class="quarantine__survivor--id">
           {{'quarantine.survivor' | translate}} {{ s.name }}

@@ -1,18 +1,18 @@
 <form class="survivor" name="survivorEditForm" ng-submit="editSurvivor()">
-  <md-grid-list md-cols="5" md-row-height="14px" md-gutter="10px">
-    <md-grid-tile md-colspan="5" md-rowspan="4">
+  <md-grid-list md-cols="5" md-cols-xs="1"  md-row-height="14px" md-gutter="10px">
+    <md-grid-tile md-colspan="5" md-colspan-xs="1" md-rowspan-xs="4" md-rowspan="4">
       <md-input-container>
         <label>{{ 'survivor.name' | translate }}</label>
         <input type="text" name="name" ng-model="ctrl.name" ng-init="ctrl.name = name" required>
       </md-input-container>
     </md-grid-tile>
-    <md-grid-tile md-colspan="2" md-rowspan="8">
+    <md-grid-tile md-colspan="2" md-colspan-xs="1" md-rowspan-xs="2" md-rowspan="8">
       <md-input-container>
         <label>{{ 'survivor.age' | translate }}</label>
         <input type="number" name="age" ng-model="ctrl.age" ng-init="ctrl.age = age" required>
       </md-input-container>
     </md-grid-tile>
-    <md-grid-tile md-colspan="1" md-rowspan="8">
+    <md-grid-tile md-colspan="1" md-colspan-xs="1" md-rowspan-xs="2" md-rowspan="8">
       <p class="auth__label">{{ 'survivor.gender' | translate }}:
         <span class="radioValue">{{ gender }}</span>
       </p>
@@ -21,14 +21,14 @@
         <md-radio-button value="F">{{ 'survivor.female' | translate }}</md-radio-button>
       </md-radio-group>
     </md-grid-tile>
-    <md-grid-tile md-colspan="2" md-rowspan="8" ng-cloak>
+    <md-grid-tile md-colspan="2" md-colspan-xs="1" md-rowspan-xs="16" md-rowspan="8" ng-cloak>
       <div class="" style="width:300px;height:300px;">
         <ng-map center='current-position' geo-fallback-center="[40.74, -74.18]" geo-callback="ctrl.callbackFunc()">
           <marker position="current" animation="Animation.BOUNCE" centered="true"></marker>
         </ng-map>
       </div>
     </md-grid-tile>
-    <md-grid-tile md-colspan="5" md-rowspan="4">
+    <md-grid-tile md-colspan="5" md-colspan-xs="1" md-rowspan-xs="4" md-rowspan="4">
       <md-button class="md-primary md-raised" type="submit" ng-disabled="survivorForm.$invalid">
         <i class="fa fa-pencil" aria-hidden="true"></i>
         Edit

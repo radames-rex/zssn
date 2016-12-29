@@ -18,15 +18,33 @@
     user-select: none;
     box-shadow: 2px 2px 5px 1px gray;
 
-    &--item{
-      flex:1;
+    &--item {
+      flex: 1;
     }
   }
 
   &__content {
-    margin: 0 0 20px 0px;
+    margin: 0 0 20px;
     background: #f5f5f5;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     overflow: hidden;
+  }
+}
+/* Responsive: Portrait Smartphones */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) {
+  .dashboard {
+    &__header {
+      height: auto;
+      flex-direction: column;
+    }
+  }
+}
+/* Responsive: Portrait tablets */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .dashboard {
+    &__header {
+      height: auto;
+      flex-direction: column;
+    }
   }
 }
