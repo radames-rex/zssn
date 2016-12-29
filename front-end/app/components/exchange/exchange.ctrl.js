@@ -9,8 +9,7 @@
    * # ExchangeCtrl
    * Controller of the zssnApp
    */
-  var ExchangeCtrl = function($scope, ExchangeFactory) {
-    $scope.message = "";
+  var ExchangeCtrl = function($scope, ExchangeFactory, Toast) {
 
     var normalizeInventory = function(inventory) {
       return "Water:" + inventory.water +
@@ -23,13 +22,17 @@
       ExchangeFactory.trade($scope.ctrl.recipient,
         normalizeInventory($scope.ctrl.inventory.recipient),
           normalizeInventory($scope.ctrl.inventory.your)).then(function(data) {
-        $scope.message = "Okay";
+          if (data !== undefined) {
+            Toast.showSuccessToast("Success!");
+          }else {
+            Toast.showErrorToast("Error!");
+          }
       });
     };
 
   };
 
-  ExchangeCtrl.$inject = ['$scope', 'ExchangeFactory'];
+  ExchangeCtrl.$inject = ['$scope', 'ExchangeFactory', 'Toast'];
 
   angular
     .module('zssnApp')
