@@ -3,20 +3,20 @@
     <md-grid-tile md-colspan="5" md-rowspan="4">
       <md-input-container>
         <label>{{ 'survivor.name' | translate }}</label>
-        <input type="text" name="name" ng-model="ctrl.name" required>
+        <input type="text" name="name" ng-model="ctrl.name" ng-init="ctrl.name = name" required>
       </md-input-container>
     </md-grid-tile>
     <md-grid-tile md-colspan="2" md-rowspan="8">
       <md-input-container>
         <label>{{ 'survivor.age' | translate }}</label>
-        <input type="number" name="age" ng-model="ctrl.age" required>
+        <input type="number" name="age" ng-model="ctrl.age" ng-init="ctrl.age = age" required>
       </md-input-container>
     </md-grid-tile>
     <md-grid-tile md-colspan="1" md-rowspan="8">
       <p class="auth__label">{{ 'survivor.gender' | translate }}:
         <span class="radioValue">{{ gender }}</span>
       </p>
-      <md-radio-group ng-model="ctrl.gender">
+      <md-radio-group ng-model="ctrl.gender" ng-init="ctrl.gender = gender">
         <md-radio-button value="M" class="md-primary">{{ 'survivor.male' | translate }}</md-radio-button>
         <md-radio-button value="F">{{ 'survivor.female' | translate }}</md-radio-button>
       </md-radio-group>
@@ -29,7 +29,7 @@
       </div>
     </md-grid-tile>
     <md-grid-tile md-colspan="5" md-rowspan="4">
-      <md-button class="md-primary" type="submit" ng-disabled="survivorForm.$invalid">
+      <md-button class="md-primary md-raised" type="submit" ng-disabled="survivorForm.$invalid">
         <i class="fa fa-pencil" aria-hidden="true"></i>
         Edit
       </md-button>

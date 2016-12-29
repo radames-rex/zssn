@@ -34,6 +34,7 @@
           normalizeCoordinates($scope.ctrl.coordinates),
             normalizeInventory($scope.ctrl.inventory)).then(function(data) {
         AuthFactory.setUUID(data.id);
+        AuthFactory.setUser($scope.ctrl.name,$scope.ctrl.age, $scope.ctrl.gender);
         $scope.logged = true;
       });
     };
