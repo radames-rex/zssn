@@ -1,6 +1,10 @@
-# my-repositories
+# Zombie Survival Social Network
+
+## FRONT-END
 
 ## Get Started
+
+Dentro do diretório ```front-end/```:
 
 Para instalar as dependências é necessário ter o NodeJS e NPM instalados e as seguintes dependências:
 
@@ -17,6 +21,10 @@ Para instalas as demais dependências de front-end:
 ou
 
 ```sudo bower install --allow-root```
+
+Para instalar as demais dependências de teste:
+
+```npm install grunt-karma karma karma-phantomjs-launcher karma-jasmine jasmine-core phantomjs-prebuilt --save-dev```
 
 ## Build & development
 

@@ -1,0 +1,16 @@
+- Melhorar interação com user-agents Mobile.
+- Disponibilizar Relatório em PDF para download.
+- Adicionar animaçoes durante troca de items no inventário e ao reportar infectados.
+- Remover pessoas que já foram indicados como infectados da lista do usuário atual.
+- Corrigir mapa sumido na tela de cadastro.
+- Corrigir mapa que trava em alguns momentos na tela de alterar dados e localização.
+- Melhorar disposição dos componentes no dashboard.
+- Validar dados durante a troca.
+- Impedir que usuário tente realizar a troca com algo que não possui no inventário ou na quantidade suficiente.
+- Troca inteligente: Sugerir opções durante a troca.
+- Internacionalizar Relatórios.
+- Criar opção para troca de idioma e não só identificá-lo pelo navegador.
+- Remover modal de Start.
+- Melhorar layout da tela de troca de items.
+- Mostrar itens do usuário e do destinatário.
+- Melhorar layout da tela para reportar infectados.
